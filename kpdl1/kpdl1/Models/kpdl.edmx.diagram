@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d94ffc5730504091ba916d092fe3c06f" Name="Diagram1">
+        <EntityTypeShape EntityType="luanvanModel.DM_ChiTieu" Width="1.5" PointX="9.75" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DM_LoaiMau" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DM_NhomChiTieu" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DM_TaiKhoan" Width="1.5" PointX="8.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DM_ToChucDoanThe" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DM_ToChucDoanTheNhom" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DM_TrangThai" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DT_DangKyNhapKhau" Width="1.5" PointX="3" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DT_HoSoKiemNghiem" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DT_MauKiemNghiem" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DT_PhieuPhanTich" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.DT_PhieuPhanTichChiTieu" Width="1.5" PointX="12" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.NS_HoSo" Width="1.5" PointX="3" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="luanvanModel.sysdiagram" Width="1.5" PointX="10.75" PointY="15.625" IsExpanded="true" />
+        <AssociationConnector Association="luanvanModel.FK_DT_PhieuPhanTichChiTieu_DM_ChiTieu" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DM_LoaiMau_DM_ToChucDoanThe" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_HoSoKiemNghiem_DM_LoaiMau" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DM_TaiKhoan_DM_ToChucDoanTheNhom" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DM_TaiKhoan_NS_HoSo" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DM_ToChucDoanTheNhom_DM_ToChucDoanThe" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_PhieuPhanTich_DM_ToChucDoanThe" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_HoSoKiemNghiem_DM_TrangThai" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_HoSoKiemNghiem_DT_DangKyNhapKhau" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_HoSoKiemNghiem_NS_HoSo1" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_MauKiemNghiem_DT_HoSoKiemNghiem" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_PhieuPhanTich_DT_MauKiemNghiem" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_PhieuPhanTichChiTieu_DT_PhieuPhanTich" ManuallyRouted="false" />
+        <AssociationConnector Association="luanvanModel.FK_DT_PhieuPhanTichChiTieu_NS_HoSo1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

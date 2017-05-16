@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+    }
+       .navbar-inverse .navbar-brand {
+    color: white;
+}
+</style>
+<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          @Html.Raw(ViewBag.data)
+        ]);
+
+        var options = {
+          title: 'Biểu Đồ Thống Kê Tổ Chức Đoàn Thể',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+</script>
+
+
+<div class="row">
+    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+</div>
