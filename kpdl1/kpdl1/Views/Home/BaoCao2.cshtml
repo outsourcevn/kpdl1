@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "BaoCao2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<div class="col-md-12" style="padding-top:10px;"><span>Từ Ngày: </span><input type="text" id="fromDate" class="ipH26" style="width:110px" /><span>Đến Ngày: </span><input type="text" id="toDate" class="ipH26" style="width:110px" />
+    <button onclick="search();">Xem</button>
+</div>*@
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        @Html.Raw(ViewBag.data)
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+          title: "Thống kê mỗi mẫu dịch vụ có bao nhiêu mẫu kiểm nghiệm",
+        width: 900,
+        height: 400,
+        bar: {groupWidth: "100%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+
+      var data2 = google.visualization.arrayToDataTable([
+        @Html.Raw(ViewBag.data2)
+      ]);
+
+      var options2 = {
+          title: 'Mẫu dịch vụ và hồ sơ kiểm nghiệm',
+          vAxis: { title: 'Hồ Sơ Kiểm Nghiệm' },
+          isStacked: true
+      };
+
+      var chart2 = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+
+      chart2.draw(data2, options2);
+
+
+    }
+    $(function () {
+        $('#fromDate').datepicker();
+        $('#toDate').datepicker();
+    });
+    function search() {
+        var url = "";
+        if (document.getElementById("fromDate").value == "") {
+            alert("Nhập từ ngày!");
+            document.getElementById("fromDate").focus();
+            return;
+        }
+        if (document.getElementById("toDate").value == "") {
+            alert("Nhập đến ngày!");
+            document.getElementById("toDate").focus();
+            return;
+        }
+        url += "from_date=" + document.getElementById("fromDate").value + "&" + "to_date=" + document.getElementById("toDate").value;
+        window.location.href = "/Home/BaoCao2?" + url;
+    }
+</script>
+<div id="barchart_values" style="width: 100%; height: 500px;"></div>
+<div id="chart_div" style="width: 100%; height: 500px;"></div>

@@ -1,14 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<style>
-    .navbar-inverse .navbar-nav > li > a {
-        color: white;
-    }
-       .navbar-inverse .navbar-brand {
-    color: white;
-}
-</style>
+
 <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -18,16 +11,31 @@
         ]);
 
         var options = {
-          title: 'Biểu Đồ Thống Kê Tổ Chức Đoàn Thể',
+          title: 'Biểu đồ thống kê Tổ chức đoàn thể và Kết quả kiểm nghiệm',
           pieHole: 0.4,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
+
+        // Bieu do 2
+
+        var data2 = google.visualization.arrayToDataTable([
+        @Html.Raw(ViewBag.data2)
+        ]);
+
+        var options2 = {
+            title: 'Biểu đồ thống kê Tổ chức đoàn thể và Chỉ tiêu kiểm nghiệm',
+            pieHole: 0.4,
+        };
+
+        var chart2 = new google.visualization.PieChart(document.getElementById('donutchart2'));
+        chart2.draw(data2, options2);
       }
 </script>
 
 
 <div class="row">
     <div id="donutchart" style="width: 900px; height: 500px;"></div>
+    <div id="donutchart2" style="width: 900px; height: 500px;"></div>
 </div>
